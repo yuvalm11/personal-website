@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: "Merriweather", serif;
+    font-size: 1.07em;
+    background-color: #f5f0e6;
+    color: #4a3f35;
+}
+
+.container {
+    display: flex;
+}
+
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background-color: #d1bfa7;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.sidebar ul li.selected {
+    font-weight: bold;
+}
+
+.sidebar ul li ul {
+    list-style: none;
+    padding-left: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.sidebar ul li ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.sidebar ul li ul li.selected {
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 40px;
+    text-align: justify;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

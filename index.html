@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuval</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar fixed-sidebar">
+            <h2>Yuval</h2>
+            <ul>
+                <li onclick="showSection('about', true)">About</li>
+                <li onclick="toggleProjects()">Projects
+                    <ul id="projects-list" class="hidden">
+                        <li onclick="showProjectContent('MNIST-VAE')">VAEs & CNNs</li>
+                        <li onclick="showProjectContent('Vplotter')">V Plotter Machine</li>
+                        <li onclick="showProjectContent('NightLamp')">Night Lamp</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="about" class="section active">
+                <table>
+                    <tr>
+                        <h1>Hi.</h1>
+                        <td style="width: 65%;">
+                            <p>
+                                I'm Yuval, a senior undergraduate at MIT, studying Computer Science. My work focuses on leveraging data
+                                science, machine learning, and computer vision to make machines smarter and more efficient.<br><br>
+                                I currently work at the MIT <a href="https://cba.mit.edu">Center of Bits and Atoms</a> with Prof. Neil Gershenfeld and <a href="https://ekswhyzee.com">Jake Read</a>, 
+                                where I help improve physical systems like 3D printers using advanced algorithms. <br>Generally, I love combining technology with hands-on
+                                problem solving.<br><br>
+                                This website showcases selected projects from my research, as well as some things I've built in my free
+                                time.
+                            </p>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section id="project-content" class="section hidden">
+                <div id="project-details"></div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
