@@ -1,3 +1,3 @@
 ### Coming soon...
 
-<img src="/projects/VPlotter/kirb.mp4" style="width: 100%">
+<img src="./projects/VPlotter/kirb.mp4" style="width: 100%">

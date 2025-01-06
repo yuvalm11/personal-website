@@ -5,12 +5,12 @@ I built a small **Variational Auto Encoder** with PyTorch that maps a 2 dimensio
 <table>
 <td width="50%">
 
-<p style="text-align: center"><img style=" width: 95%; height:100%" src="/projects/MNIST-VAE/vid.mp4"></p>
+<p style="text-align: center"><img style=" width: 95%; height:100%" src="./projects/MNIST-VAE/vid.mp4"></p>
 
 </td>
 <td>
 
-<p style="text-align: center"><img style="width: 95%; height:100%" src="/projects/MNIST-VAE/VAE.png"></p>
+<p style="text-align: center"><img style="width: 95%; height:100%" src="./projects/MNIST-VAE/VAE.png"></p>
 
 </td>
 </table>
