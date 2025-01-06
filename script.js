@@ -53,12 +53,12 @@ async function showProjectContent(projectId) {
 
     const projectDetails = document.getElementById('project-details');
     try {
-        const response = await fetch(`/projects/${projectId}/main.md`);
+        // Adjust the path for static hosting
+        const response = await fetch(`./projects/${projectId}/main.md`);
         if (response.ok) {
             const markdownText = await response.text();
             projectDetails.innerHTML = marked.parse(markdownText);
         } else {
-            console.log('sdfsfsds')
             projectDetails.innerHTML = `<p>Coming soon...</p>`;
         }
     } catch (error) {
@@ -70,6 +70,7 @@ async function showProjectContent(projectId) {
     const projectItems = document.querySelectorAll('#projects-list li');
     projectItems.forEach(item => item.classList.remove('selected'));
 
+    // Ensure the correct project is highlighted
     document.querySelector(`[onclick="showProjectContent('${projectId}')"]`).classList.add('selected');
 }
 
