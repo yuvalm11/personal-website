@@ -1,3 +1,5 @@
 ## Project documentation website
 
-- [ ] Get rid of markdown parsing 
+- [x] Get rid of markdown parsing
+- [ ] Add plotter repo
+- [ ] Add more projects
