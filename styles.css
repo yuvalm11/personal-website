@@ -19,6 +19,8 @@ body {
     background-color: #d1bfa7;
     padding: 20px;
     box-sizing: border-box;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar h2 {
@@ -60,10 +62,15 @@ body {
     font-weight: bold;
 }
 
+.about {
+    width: 85%;
+}
+
 .content {
     margin-left: 25%;
     padding: 50px;
     text-align: justify;
+    transition: margin-left 0.3s ease-in-out;
 }
 
 .section {
@@ -76,4 +83,40 @@ body {
 
 .hidden {
     display: none;
+}
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .fixed-sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        padding-top: 4em;
+    }
+
+    .fixed-sidebar.active {
+        transform: translateX(0);
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .about {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }

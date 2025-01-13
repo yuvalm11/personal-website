@@ -17,7 +17,6 @@ function showSection(sectionId, collapseProjects) {
     const projectItems = document.querySelectorAll('#projects-list li');
     projectItems.forEach(item => item.classList.remove('selected'));
 
-
     document.querySelector(`[onclick="showSection('${sectionId}', true)"]`).classList.add('selected');
 
     if (collapseProjects) {
@@ -53,7 +52,6 @@ async function showProjectContent(projectId) {
 
     const projectDetails = document.getElementById('project-details');
     try {
-        // Adjust the path for static hosting
         const response = await fetch(`./projects/${projectId}/main.md`);
         if (response.ok) {
             const markdownText = await response.text();
@@ -70,7 +68,6 @@ async function showProjectContent(projectId) {
     const projectItems = document.querySelectorAll('#projects-list li');
     projectItems.forEach(item => item.classList.remove('selected'));
 
-    // Ensure the correct project is highlighted
     document.querySelector(`[onclick="showProjectContent('${projectId}')"]`).classList.add('selected');
 }
 
@@ -85,3 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectsList = document.getElementById('projects-list');
     projectsList.classList.add('hidden');
 });
+
+function toggleSidebar() {
+    const sidebar = document.querySelector('.fixed-sidebar');
+    sidebar.classList.toggle('active');
+}
