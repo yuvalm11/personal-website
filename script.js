@@ -69,6 +69,8 @@ async function showProjectContent(projectId) {
     projectItems.forEach(item => item.classList.remove('selected'));
 
     document.querySelector(`[onclick="showProjectContent('${projectId}')"]`).classList.add('selected');
+
+    toggleSidebar()
 }
 
 document.querySelectorAll('#projects-list li').forEach(projectItem => {

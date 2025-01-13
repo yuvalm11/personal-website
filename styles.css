@@ -110,6 +110,8 @@ body {
 
     .content {
         margin-left: 0;
+        padding-left: 25px;
+        padding-right: 25px;;
     }
 
     .about {
