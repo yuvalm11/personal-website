@@ -26,6 +26,8 @@ function showSection(sectionId, collapseProjects) {
             projectsList.classList.add('hidden');
         }, 300);
     }
+    const sidebar = document.querySelector('.fixed-sidebar');
+    sidebar.classList.remove('active');
 }
 
 function toggleProjects() {
