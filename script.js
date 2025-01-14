@@ -41,6 +41,22 @@ function toggleProjects() {
     }
 }
 
+async function fetchMarkdownFile(owner, repo, filePath) {
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Error fetching file: ${response.statusText}`);
+        }
+        const data = await response.json();
+        const content = atob(data.content);
+        return content;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 async function showProjectContent(projectId) {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
@@ -52,10 +68,9 @@ async function showProjectContent(projectId) {
 
     const projectDetails = document.getElementById('project-details');
     try {
-        const response = await fetch(`./projects/${projectId}/main.md`);
-        if (response.ok) {
-            const markdownText = await response.text();
-            projectDetails.innerHTML = marked.parse(markdownText);
+        const content = await fetchMarkdownFile('yuvalm11', 'personal-website', `projects/${projectId}/main.md`);
+        if (content) {
+            projectDetails.innerHTML = marked.parse(content);
         } else {
             projectDetails.innerHTML = `<p>Coming soon...</p>`;
         }
