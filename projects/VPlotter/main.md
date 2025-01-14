@@ -6,14 +6,14 @@
         <p style="width: 95%">
             With inspiration from Quinton's V-shaped plotter machine, I designed and built my version of a similar machine. The machine has interesting dynamics and using Jake's code I was able to set up a moving machine pretty quickly. <br/><br/>
             In the video below, the machine is drawing a Kirby image made from sine waves with varying frequencies. <br/><br/>
-            <video width="100%" autoplay muted>
+            <video width="100%" autoplay muted loop controls playsinline>
                 <source src="./projects/VPlotter/kirb.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </p>
         </td>
         <td>
-            <video width="97%" autoplay muted>
+            <video width="97%" autoplay muted loop controls playsinline>
                 <source src="./projects/VPlotter/machine.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>

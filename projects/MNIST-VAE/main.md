@@ -6,7 +6,7 @@ I built a small **Variational Auto Encoder** with PyTorch that maps a 2 dimensio
 <td width="50%">
 
 <p style="text-align: center">
-    <video style="width: 95%; height: 100%" autoplay muted>
+    <video style="width: 95%; height: 100%" autoplay muted loop controls playsinline>
         <source src="./projects/MNIST-VAE/vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
