@@ -6,4 +6,4 @@ I wanted to build an on-device embedded ML vision project. I used the XIAO ESP32
 
 ![](./projects/Gesture/one.ong)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?logo=github)](https://github.com/yuvalm11/mnist-vae)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?logo=github)](https://github.com/yuvalm11/gesture-control)
