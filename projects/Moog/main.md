@@ -6,10 +6,12 @@ The original Minimoog is a monophonic analog synthesizer that was designed in th
 
 The main challenge was to get fast processing of the audio signal to allow a clean, low-latency sound. I used the PSoC 5LP microcontroller, which has programmable analog and digital blocks, to implement the sound synthesis, MIDI signal processing, and user interface.
 
+I am very happy with the result and the sound quality of the synthesizer. I learned a lot about digital signal processing, sound synthesis, and programable circuits. Despite some background noise, the demo video below shows the synth in action.
+
 ### Full Demo
 
 <p style="text-align: center">
-    <video style="width: 95%; height: 100%" controls poster="./projects/Moog/synth.jpg">
+    <video style="width: 100%" controls poster="./projects/Moog/synth.jpg">
         <source src="./projects/Moog/synth.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
