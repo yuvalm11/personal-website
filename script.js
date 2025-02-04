@@ -60,34 +60,32 @@ async function fetchMarkdownFile(owner, repo, filePath) {
 }
 
 async function showProjectContent(projectId) {
+    window.location.hash = projectId;
+
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
         section.classList.remove('active');
         section.classList.add('hidden');
     });
+
     document.getElementById('project-content').classList.add('active');
     document.getElementById('project-content').classList.remove('hidden');
 
     const projectDetails = document.getElementById('project-details');
     try {
         const content = await fetchMarkdownFile('yuvalm11', 'personal-website', `projects/${projectId}/main.md`);
-        if (content) {
-            projectDetails.innerHTML = marked.parse(content);
-        } else {
-            projectDetails.innerHTML = `<p>Coming soon...</p>`;
-        }
+        projectDetails.innerHTML = content ? marked.parse(content) : `<p>Coming soon...</p>`;
     } catch (error) {
         projectDetails.innerHTML = `<p>Coming soon...</p>`;
     }
 
-    const sidebarItems = document.querySelectorAll('.sidebar ul > li');
-    sidebarItems.forEach(item => item.classList.remove('selected'));
-    const projectItems = document.querySelectorAll('#projects-list li');
-    projectItems.forEach(item => item.classList.remove('selected'));
+    document.querySelectorAll('.sidebar ul > li').forEach(item => item.classList.remove('selected'));
+    document.querySelectorAll('#projects-list li').forEach(item => item.classList.remove('selected'));
 
-    document.querySelector(`[onclick="showProjectContent('${projectId}')"]`).classList.add('selected');
+    const selectedProject = document.querySelector(`[onclick="showProjectContent('${projectId}')"]`);
+    if (selectedProject) selectedProject.classList.add('selected');
 
-    toggleSidebar()
+    toggleSidebar();
 }
 
 document.querySelectorAll('#projects-list li').forEach(projectItem => {
@@ -106,3 +104,19 @@ function toggleSidebar() {
     const sidebar = document.querySelector('.fixed-sidebar');
     sidebar.classList.toggle('active');
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.substring(1); // Remove the '#' from URL
+    if (hash) {
+        showProjectContent(hash);
+    } else {
+        showSection('about', true);
+    }
+});
+
+window.addEventListener("hashchange", () => {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+        showProjectContent(hash);
+    }
+});
